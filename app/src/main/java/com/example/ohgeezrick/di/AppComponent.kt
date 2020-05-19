@@ -6,11 +6,14 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
+import javax.inject.Singleton
 
 @Component(modules = [AndroidInjectionModule::class,
     FragmentModule::class,
     ViewModelModule::class,
-    ApiModule::class])
+    ApiModule::class,
+    ServicesModule::class])
+@Singleton
 interface AppComponent : AndroidInjector<OhGeezRickApp> {
 
     @Component.Builder
