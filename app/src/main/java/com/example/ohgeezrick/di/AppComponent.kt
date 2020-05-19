@@ -9,7 +9,8 @@ import dagger.android.AndroidInjector
 
 @Component(modules = [AndroidInjectionModule::class,
     FragmentModule::class,
-    ViewModelModule::class])
+    ViewModelModule::class,
+    ApiModule::class])
 interface AppComponent : AndroidInjector<OhGeezRickApp> {
 
     @Component.Builder
