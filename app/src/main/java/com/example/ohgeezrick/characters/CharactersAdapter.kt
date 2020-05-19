@@ -22,6 +22,12 @@ class CharactersAdapter(private val onItemClick: (Character) -> Unit): RecyclerV
         holder.bind(characters[position], onItemClick)
     }
 
+    fun setCharacters(characters: List<Character>) {
+        this.characters.clear()
+        this.characters.addAll(characters)
+        notifyDataSetChanged()
+    }
+
     class CharacterViewHolder(
         parent: ViewGroup,
         @LayoutRes

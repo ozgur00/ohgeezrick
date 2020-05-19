@@ -23,8 +23,11 @@ abstract class BaseFragment<VM: BaseViewModel, DB: ViewDataBinding> : DaggerFrag
     lateinit var binding: DB
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(LayoutInflater.from(requireContext()), getLayoutResourceId(), container, false
-        )
+        binding = DataBindingUtil.inflate(
+            LayoutInflater.from(requireContext()),
+            getLayoutResourceId(),
+            container,
+            false)
         bind(viewModel)
         return binding.root
     }
